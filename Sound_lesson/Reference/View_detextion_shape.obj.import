@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cgc0qavakq5qe"
+path="res://.godot/imported/View_detextion_shape.obj-aa243466df64570ff185576cdb702893.mesh"
+
+[deps]
+
+files=["res://.godot/imported/View_detextion_shape.obj-aa243466df64570ff185576cdb702893.mesh"]
+
+source_file="res://Reference/View_detextion_shape.obj"
+dest_files=["res://.godot/imported/View_detextion_shape.obj-aa243466df64570ff185576cdb702893.mesh", "res://.godot/imported/View_detextion_shape.obj-aa243466df64570ff185576cdb702893.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

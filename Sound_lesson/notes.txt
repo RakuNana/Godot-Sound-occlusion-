@@ -1,0 +1,11 @@
+
+
+won't trigger without navagent 3d_velocity_computed(safe_vel)
+
+nav_agent.set_velocity(new_vel * speed)
+
+
+
+I made the radius in the NavaRegion bigger
+
+In Navi_agent, path desired can be used to keep enemies from running into corners 

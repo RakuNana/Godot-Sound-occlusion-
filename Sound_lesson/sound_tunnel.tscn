@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://y5ub21pdadug"]
+
+[ext_resource type="Script" path="res://sound_tunnel.gd" id="1_ribyd"]
+[ext_resource type="Script" path="res://window_door_col.gd" id="2_s1pu6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iflte"]
+size = Vector3(15, 15, 15)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oprj5"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_1cwyq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l22ct"]
+albedo_color = Color(2.5028e-06, 0.408658, 0.532805, 1)
+
+[node name="sound_tunnel" type="Node3D"]
+script = ExtResource("1_ribyd")
+
+[node name="noise_collector_area" type="Area3D" parent="." groups=["sound_tunnel_area"]]
+collision_layer = 256
+collision_mask = 256
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="noise_collector_area"]
+shape = SubResource("BoxShape3D_iflte")
+
+[node name="window_door_col" type="StaticBody3D" parent="." groups=["sound_tunnel"]]
+collision_layer = 32768
+collision_mask = 32768
+script = ExtResource("2_s1pu6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="window_door_col"]
+shape = SubResource("BoxShape3D_oprj5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_1cwyq")
+surface_material_override/0 = SubResource("StandardMaterial3D_l22ct")
+
+[connection signal="body_entered" from="noise_collector_area" to="window_door_col" method="_on_noise_collector_area_body_entered"]
+[connection signal="body_exited" from="noise_collector_area" to="window_door_col" method="_on_noise_collector_area_body_exited"]
